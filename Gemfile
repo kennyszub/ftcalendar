@@ -1,12 +1,31 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
+gem 'haml-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'debugger'
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'simplecov'
+end
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
 
+group :production do
+  gem 'pg'
+end
+
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Gems used only for assets and not required
 # in production environments by default.
