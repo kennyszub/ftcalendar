@@ -22,6 +22,9 @@ group :test do
   gem 'cucumber-rails-training-wheels'
 end
 
+gem "email_spec", ">= 1.4.0", :group => :test
+gem "factory_girl_rails", :group => [:development, :test]
+
 group :development do
   gem 'sqlite3'
 end
