@@ -1,5 +1,12 @@
 Ftcalendar::Application.routes.draw do
+  #get "home/index"
+
   devise_for :admins
+
+  authenticated :admin do
+    root :to => 'home#index'
+  end
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
