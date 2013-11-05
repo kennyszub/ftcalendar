@@ -22,9 +22,41 @@
       ],
       "/home/saasbook/ftcalendar/app/helpers/application_helper.rb": [
         1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/helpers/events_helper.rb": [
+        1,
         null
       ],
       "/home/saasbook/ftcalendar/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/controllers/events_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/models/event.rb": [
+        1,
         1,
         null
       ],
@@ -35,7 +67,7 @@
         null
       ]
     },
-    "timestamp": 1383628480
+    "timestamp": 1383642960
   },
   "RSpec": {
     "coverage": {

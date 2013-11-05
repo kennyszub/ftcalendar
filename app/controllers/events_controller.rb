@@ -15,4 +15,11 @@ class EventsController < ApplicationController
     flash[:notice] = "#{@event.title} was successfully created."
     redirect_to '/'
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:notice] = "Event '#{@event.title}' deleted."
+    redirect_to '/'
+  end
 end
