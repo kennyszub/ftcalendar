@@ -1,0 +1,23 @@
+%h1 Create New Event
+
+= form_tag events_path do
+
+  = label :event, :title, 'Title'
+  = text_field :event, 'title'
+
+  = label :event, :starts_at, 'Start Date'
+  = datetime_select :event, :starts_at
+
+  = label :event, :ends_at, 'End Date'
+  = datetime_select :event, :ends_at
+
+  = label :event, :description, 'Description'
+  = text_area :event, :description
+
+  = label :event, :signup_url, 'Sign Up Link'
+  = text_field :event, :signup_url
+
+  = label :event, :max_volunteers, 'Max Volunteers'
+  = number_field :event, :max_volunteers
+
+  = submit_tag 'Save Changes'
