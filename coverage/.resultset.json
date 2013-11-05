@@ -1,0 +1,78 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/saasbook/ftcalendar/app/models/admin.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1383628480
+  },
+  "RSpec": {
+    "coverage": {
+      "/home/saasbook/ftcalendar/app/models/admin.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1383628460
+  }
+}
