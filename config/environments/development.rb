@@ -32,6 +32,9 @@ Ftcalendar::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
+  config.assets.manifest = Rails.root.join("public/assets")
+
+
   # Expands the lines which load the assets
   config.assets.debug = true
 end
