@@ -5,6 +5,11 @@ class EventsController < ApplicationController
   def new
   end
 
+  def edit
+    id = params[:id]
+    @event = Event.find(id)
+  end
+
   def show
     id = params[:id]
     @event = Event.find(id)
@@ -13,6 +18,13 @@ class EventsController < ApplicationController
   def create
     @event = Event.create!(params[:event])
     flash[:notice] = "#{@event.title} was successfully created."
+    redirect_to '/'
+  end
+
+  def update
+    @event = Event.find params[:id]
+    @event.update_attributes!(params[:event])
+    flash[:notice] = "#{@event.title} was successfully updated."
     redirect_to '/'
   end
 

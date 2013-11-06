@@ -53,6 +53,13 @@
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/home/saasbook/ftcalendar/app/models/event.rb": [
@@ -67,7 +74,7 @@
         null
       ]
     },
-    "timestamp": 1383642960
+    "timestamp": 1383646153
   },
   "RSpec": {
     "coverage": {
