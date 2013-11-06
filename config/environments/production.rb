@@ -47,6 +47,8 @@ Ftcalendar::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+
+  # this precompiles the js and css files
   config.assets.precompile << Proc.new { |path|
     if path =~ /\.(css|js)\z/
       full_path = Rails.application.assets.resolve(path).to_path
