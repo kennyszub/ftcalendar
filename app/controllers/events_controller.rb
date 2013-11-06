@@ -35,4 +35,9 @@ class EventsController < ApplicationController
     flash[:notice] = "Event '#{@event.title}' deleted."
     redirect_to '/'
   end
+
+  def all_events
+    @events = Event.all
+    render json: @events
+  end
 end
