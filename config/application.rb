@@ -42,7 +42,7 @@ module Ftcalendar
 
     config.assets.initialize_on_precompile = false
 
-    config.assets.precompile = ['*.js', '*.css']
+    config.assets.precompile = ['rails.validations.js']
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
