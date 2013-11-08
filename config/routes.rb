@@ -8,6 +8,9 @@ Ftcalendar::Application.routes.draw do
   end
   root :to => "home#index"
 
+  resources :events
+  match 'all_events' => 'events#all_events'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

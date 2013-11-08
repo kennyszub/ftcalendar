@@ -1,0 +1,24 @@
+%h1 Edit Event
+
+= form_for @event, :method => :put, :validate => true do |e|
+  .fieldset
+    .form-group
+      = e.label :title, 'Title'
+      = e.text_field :title
+    .form-group
+      = e.label :starts_at, 'Start Date'
+      = e.datetime_select :starts_at
+    .form-group
+      = e.label :ends_at, 'End Date'
+      = e.datetime_select :ends_at
+    .form-group
+      = e.label :description, 'Description'
+      = e.text_area :description, :rows => 5
+    .form-group
+      = e.label :signup_url, 'Sign Up Link'
+      = e.text_field :signup_url
+    .form-group
+      = e.label :max_volunteers, 'Max Volunteers'
+      = e.number_field :max_volunteers
+
+    = submit_tag 'Update Event Info'

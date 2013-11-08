@@ -1,14 +1,30 @@
-= link_to "Forward Tutoring Calendar", root_path, :class => 'brand'
-%ul.nav
-  - if admin_signed_in?
-    %li
-      = link_to 'Logout', destroy_admin_session_path, :method=>'delete'
-  - else
-    %li
-      = link_to 'Login', new_admin_session_path
-  - if admin_signed_in?
-    %li
-      = link_to 'Edit account', edit_admin_registration_path
-  - else
-    %li
-      = link_to 'Sign up', new_admin_registration_path
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{href: root_path} Forward Tutoring Calendar
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{href: root_path} Home
+        %li
+          %a{href: "#about"} About
+        %li
+          %a{href: "#contact"} Contact
+      %ul.nav.navbar-nav.navbar-right
+        - if admin_signed_in?
+          %li
+            = link_to 'Logout', destroy_admin_session_path, :method=>'delete'
+        - else
+          %li
+            = link_to 'Login', new_admin_session_path
+        - if admin_signed_in?
+          %li
+            = link_to 'Edit account', edit_admin_registration_path
+        - else
+          %li
+            = link_to 'Sign up', new_admin_registration_path
+    / /.nav-collapse

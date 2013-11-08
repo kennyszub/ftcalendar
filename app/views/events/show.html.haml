@@ -1,0 +1,22 @@
+%h2 #{@event.title}
+
+%ul#details
+  %li
+    Starts At:
+    = @event.starts_at.strftime("%c")
+  %li
+    Ends At:
+    = @event.ends_at.strftime("%c")
+  %li
+    Max Volunteers:
+    = @event.max_volunteers
+
+%h3 Description:
+
+%p#description= @event.description
+
+%a{:href => url_with_protocol(@event.signup_url)} Sign Up to Volunteer
+
+- if admin_signed_in?
+  = link_to 'Edit', edit_event_path(@event)
+  = button_to 'Delete', event_path(@event), :method => :delete, :confirm => 'Are you sure?'
