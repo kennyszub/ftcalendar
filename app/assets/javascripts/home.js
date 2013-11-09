@@ -13,7 +13,7 @@ $(document).ready(function() {
                 right: 'month,basicWeek,basicDay'
             },
             defaultView: 'basicWeek',
-            editable: true,
+            editable: false,
             events: events
         });
     });
