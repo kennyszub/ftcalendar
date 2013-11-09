@@ -4,6 +4,7 @@ gem 'rails', '3.2.14'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'client_side_validations'
+gem 'jquery-ui-rails'
 
 
 # Bundle edge Rails instead:

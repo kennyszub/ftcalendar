@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => :show
+  before_filter :authenticate_admin!, :except => [:show, :all_events]
 
   def new
     @event = Event.new
@@ -38,6 +38,10 @@ class EventsController < ApplicationController
 
   def all_events
     @events = Event.all
+    @events.each do |event|
+      event.starts_at = event.starts_at.to_i
+      event.ends_at = event.ends_at.to_i
+    end
     render json: @events
   end
 end
