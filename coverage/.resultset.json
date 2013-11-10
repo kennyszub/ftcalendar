@@ -95,7 +95,7 @@
         null
       ]
     },
-    "timestamp": 1383733556
+    "timestamp": 1383990571
   },
   "RSpec": {
     "coverage": {
@@ -120,10 +120,74 @@
       ],
       "/home/saasbook/ftcalendar/app/helpers/application_helper.rb": [
         1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/helpers/events_helper.rb": [
+        1,
         null
       ],
       "/home/saasbook/ftcalendar/app/helpers/home_helper.rb": [
         1,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/controllers/events_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/saasbook/ftcalendar/app/models/event.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
         null
       ],
       "/home/saasbook/ftcalendar/app/controllers/home_controller.rb": [
@@ -133,6 +197,6 @@
         null
       ]
     },
-    "timestamp": 1383628460
+    "timestamp": 1384082598
   }
 }
