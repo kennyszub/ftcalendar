@@ -4,7 +4,6 @@ gem 'rails', '3.2.14'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'client_side_validations'
-gem 'jquery-ui-rails'
 
 
 # Bundle edge Rails instead:
@@ -52,6 +51,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 gem 'devise'
 
 # To use ActiveModel has_secure_password
