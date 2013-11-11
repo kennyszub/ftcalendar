@@ -133,6 +133,10 @@ When /^I look at the list of admins$/ do
   visit '/'
 end
 
+When /^I look at the add event page$/ do
+  visit '/events/new'
+end
+
 ### THEN ###
 Then /^I should be signed in$/ do
   page.should have_content "Logout"
