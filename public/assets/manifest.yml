@@ -1,6 +1,8 @@
 ---
 application.js: application-ffc93f57c6f463f2dd9a971484fcbc5d.js
 application/index.js: application-ffc93f57c6f463f2dd9a971484fcbc5d.js
+devise/sessions.js: devise/sessions-1b13569e9620782f423d4cd3ce931750.js
+devise/sessions/index.js: devise/sessions-1b13569e9620782f423d4cd3ce931750.js
 events.js: events-a7fa98ba2ef09a5dcc079d3f014a4e3c.js
 events/index.js: events-a7fa98ba2ef09a5dcc079d3f014a4e3c.js
 home.js: home-1553c1dc94c9d8fbda92b93cb0249b40.js
