@@ -1,1 +1,22 @@
 #calendar
+
+:javascript
+    $(document).ready(function() {
+        $.getJSON('/all_events', function(jsonEvents) {
+            var events = [];
+            for (var i = 0; i < jsonEvents.length; i++) {
+                var currEvent = convertToEvent(jsonEvents[i]);
+                events.push(currEvent);
+            }
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                defaultView: 'basicWeek',
+                editable: false,
+                events: events
+            });
+        });
+    });
