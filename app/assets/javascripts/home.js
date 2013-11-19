@@ -8,6 +8,7 @@ function convertToEvent(event) {
     calEvent['start'] = new Date(event.starts_at * 1000);
     calEvent['end'] = new Date(event.ends_at * 1000);
     calEvent['id'] = event.id;
+    calEvent['url'] = '/events/' + event.id;
     return calEvent;
 }
 
