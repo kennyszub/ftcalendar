@@ -36,6 +36,10 @@ class EventsController < ApplicationController
     redirect_to '/'
   end
 
+  def index
+    @events = Event.all
+  end
+
   def search
     @search = Event.search do
       keywords params[:query]
