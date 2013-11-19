@@ -38,14 +38,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-  end
-
-  def search
-    @search = Event.search do
-      keywords params[:query]
-      fields(:description, :title)
+    if params[:query]
+      @search = Event.search do
+        keywords params[:query]
+        #fields(:description, :title)
+      end
+      @events = @search.results
     end
-    @events = @search.results
   end
 
   def all_events
