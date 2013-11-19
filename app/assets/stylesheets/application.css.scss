@@ -11,8 +11,10 @@
  *= require_self
  *= require_tree .
  *= require jquery.ui.all
+
  */
-@import "bootstrap";
+//@import "bootstrap";
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css");
 //
 //.brand {
 //    float: left;
