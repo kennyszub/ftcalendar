@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  errors:
+      messages:
+        starts_at: "Start date must be before end date"
