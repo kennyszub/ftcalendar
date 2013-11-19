@@ -123,7 +123,7 @@ When /^I sign in with a wrong password$/ do
 end
 
 When /^I edit my account details$/ do
-  click_link "Edit account"
+  click_link "Edit Account"
   fill_in "admin_name", :with => "newname"
   fill_in "admin_current_password", :with => @visitor[:password]
   click_button "Update"
@@ -131,6 +131,10 @@ end
 
 When /^I look at the list of admins$/ do
   visit '/'
+end
+
+When /^I look at the add event page$/ do
+  visit '/events/new'
 end
 
 ### THEN ###

@@ -1,23 +1,4 @@
-$(document).ready(function() {
 
-    $.getJSON('/all_events', function(jsonEvents) {
-        var events = [];
-        for (var i = 0; i < jsonEvents.length; i++) {
-            var currEvent = convertToEvent(jsonEvents[i]);
-            events.push(currEvent);
-        }
-        $('#calendar').fullCalendar({
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,basicWeek,basicDay'
-            },
-            defaultView: 'basicWeek',
-            editable: false,
-            events: events
-        });
-    });
-});
 
 
 
@@ -26,6 +7,7 @@ function convertToEvent(event) {
     calEvent['title'] = event.title;
     calEvent['start'] = new Date(event.starts_at * 1000);
     calEvent['end'] = new Date(event.ends_at * 1000);
+    calEvent['id'] = event.id;
     return calEvent;
 }
 
@@ -5432,6 +5414,9 @@ function convertToEvent(event) {
                 html += "<a href='" + htmlEscape(url) + "'";
             }else{
                 html += "<div";
+            }
+            if(event['id'] && segment.isStart){
+                html += " id='event" + event['id'] + "'";
             }
             html +=
                 " class='" + classNames.join(' ') + "'" +
