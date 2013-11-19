@@ -5,7 +5,9 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{href: root_path} Forward Tutoring Calendar
+      //%a.navbar-brand{href: root_path} Forward Tutoring Calendar
+      %a.button.btn.btn-lg{type: "button"}
+        %span.glyphicon.glyphicon-calendar{href: root_path}
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li.active
@@ -16,6 +18,11 @@
           %a{href: "#contact"} Contact
         %li
           %a{href: "events"} Events
+        %li
+          %a
+            = form_tag events_path, :method => :get, :validate => true do
+              = text_field_tag :query,nil, placeholder: 'Enter your search here'
+              = submit_tag 'Search', :name => nil
       %ul.nav.navbar-nav.navbar-right
         - if admin_signed_in?
           %li
