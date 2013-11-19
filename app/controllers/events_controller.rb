@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:show, :all_events]
+  before_filter :authenticate_admin!, :except => [:show, :all_events, :index]
 
   def new
     @event = Event.new
@@ -19,14 +19,14 @@ class EventsController < ApplicationController
   def create
     @event = Event.create!(params[:event])
     flash[:notice] = "#{@event.title} was successfully created."
-    redirect_to '/'
+    redirect_to @event
   end
 
   def update
     @event = Event.find params[:id]
     @event.update_attributes!(params[:event])
     flash[:notice] = "#{@event.title} was successfully updated."
-    redirect_to '/'
+    redirect_to @event
   end
 
   def destroy
@@ -38,14 +38,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-  end
-
-  def search
-    @search = Event.search do
-      keywords params[:query]
-      fields(:description, :title)
+    if params[:query]
+      @search = Event.search do
+        keywords params[:query]
+        #fields(:description, :title)
+      end
+      @events = @search.results
     end
-    @events = @search.results
   end
 
   def all_events

@@ -1,11 +1,13 @@
 
-%table.table
+%table.table.table-striped.table-condensed.table-hover
   %thead
     %tr
-      %th Title
+      %th.title Title
       %th Description
-    %tbody
+      %th Max Volunteers
+  %tbody
     - @events.each do |event|
       %tr
-        %td= event.title
+        %td= link_to event.title, event_path(event)
         %td= event.description
+        %td= event.max_volunteers
