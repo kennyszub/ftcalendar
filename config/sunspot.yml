@@ -3,6 +3,7 @@ production:
     hostname: localhost
     port: 8983
     log_level: WARNING
+    solr_home: solr
     path: /solr/production
     # read_timeout: 2
     # open_timeout: 0.5
@@ -10,6 +11,7 @@ production:
 development:
   solr:
     hostname: localhost
+    solr_home: solr
     port: 8982
     log_level: INFO
     path: /solr/development
@@ -17,6 +19,7 @@ development:
 test:
   solr:
     hostname: localhost
+    solr_home: solr
     port: 8981
     log_level: WARNING
     path: /solr/test
