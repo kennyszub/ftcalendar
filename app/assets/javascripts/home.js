@@ -33,7 +33,7 @@ function convertToEvent(event) {
 
         // display
         defaultView: 'month',
-        aspectRatio: 1.35,
+        aspectRatio: 1.85,
         header: {
             left: 'title',
             center: '',

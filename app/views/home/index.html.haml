@@ -29,6 +29,9 @@
                 $('#popup' + event['id']).hide();
               }
           });
+          var delta = $(calendar).parent().parent().width() - $(calendar).width();
+          $(calendar).parent().css('margin-left',delta/2);
+          $(calendar).parent().width($(calendar).parent().width() + delta/2);
       });
   });
 
