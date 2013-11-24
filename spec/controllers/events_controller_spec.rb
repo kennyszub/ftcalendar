@@ -37,10 +37,11 @@ describe EventsController do
     login_admin
 
     it 'should create an event successfully' do
-      event = double('Event', :title => 'test')
-      Event.should_receive(:create!).and_return(event)
-      post :create, :event => event
-      response.should redirect_to('/')
+      @event = mock_model(Event)
+      @event.stub(:save).and_return(true)
+      Event.should_receive(:create!).and_return(@event)
+      post :create, :event => @event
+      response.should redirect_to @event
     end
   end
 
@@ -48,11 +49,13 @@ describe EventsController do
     login_admin
  
     it 'should save the updated event information' do
-      event = double('Event', :id => '5', :title => 'test')
-      Event.should_receive(:find).with('5').and_return(event)
-      event.should_receive(:update_attributes!)
-      put :update, :id => '5', :event => event
-      response.should redirect_to('/')
+      #event = double('Event', :id => '5', :title => 'test')
+      @event = mock_model(Event)
+      @event.stub(:save).and_return(true)
+      Event.should_receive(:find).with('5').and_return(@event)
+      @event.should_receive(:update_attributes!)
+      put :update, :id => '5', :event => @event
+      response.should redirect_to @event
     end
   end
 
@@ -65,6 +68,20 @@ describe EventsController do
       event.should_receive(:destroy)
       delete :destroy, :id => '5'
       response.should redirect_to('/')
+    end
+  end
+
+  describe 'search index' do
+    login_admin
+
+    it 'should return the events given by a search query' do
+      fake_events = [double('Event', :id => '5', :title => 'test'), double('Event', :id => '6', :title => 'test2')]
+      fake_results = [double('Event', :id => '5', :title => 'test')]
+      #fake_results = [double('Event'), double('Event')]
+      Event.should_receive(:all).and_return(fake_events)
+      #Event.should_receive(:search).and_return(fake_results)
+      get :index
+      response.should render_template('index')
     end
   end
 
