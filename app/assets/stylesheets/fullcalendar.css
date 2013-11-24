@@ -4,7 +4,16 @@
  * (c) 2013 Adam Shaw
  */
 
+.top-bar{
+ padding-top:0px;
+ height:50px;
+ background-color: #F9F9F9;
+ border-bottom: 1px solid #DDD;
+ position:fixed;
+ right:0;
+ left:0;
 
+}
 .fc {
     direction: ltr;
     text-align: left;
@@ -28,6 +37,8 @@ html .fc,
 
 #calendar{
     width:70%;
+    padding-top:70px;
+    
 }
 
 /* Header

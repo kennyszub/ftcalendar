@@ -17,6 +17,7 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css");
 //
 //.brand {
+   
 //    float: left;
 //    padding-right: 8px;
 //}
@@ -28,7 +29,9 @@
 //ul.nav li {
 //    display: inline;
 //}
-body { padding-top: 70px; }
+body { 
+    padding-top:0px;
+ }
 
 #flash_notice, #flash_alert {
     padding: 5px 8px;
