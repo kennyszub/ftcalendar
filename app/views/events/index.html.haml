@@ -11,3 +11,5 @@
         %td= link_to event.title, event_path(event)
         %td= event.description
         %td= event.max_volunteers
+    - if @events.length == 0
+      %h4 No events found. Try less specific search terms.

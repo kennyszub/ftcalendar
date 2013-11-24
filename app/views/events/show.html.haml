@@ -15,8 +15,10 @@
 
 %p#description= @event.description
 
-%a{:href => url_with_protocol(@event.signup_url)} Sign Up to Volunteer
+%form{:action => url_with_protocol(@event.signup_url)}
+  %input{:type => "submit", :value => "Sign Up to Volunteer"}
 
 - if admin_signed_in?
-  = link_to 'Edit', edit_event_path(@event)
+  %h3 Admin Actions:
+  = button_to 'Edit', edit_event_path(@event), :method => :get
   = button_to 'Delete', event_path(@event), :method => :delete, :confirm => 'Are you sure?'
