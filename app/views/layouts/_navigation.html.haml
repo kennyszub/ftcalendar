@@ -1,29 +1,28 @@
-.top-bar
-  .container
+.container{'data-dropdown' => 'dropdown'}
+  .top-bar
     .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      //%a.navbar-brand{href: root_path} Forward Tutoring Calendar
-      %a.button.btn.btn-lg{type: "button", href: root_path}
-        %span.glyphicon.glyphicon-calendar
+      .ft-icon
+        = image_tag "logo.png"
+      
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
+        
+        
         %li.active
           %a{href: root_path} Home
         %li
-          %a{href: "#about"} About
-        %li
-          %a{href: "#contact"} Contact
-        %li
           %a{href: "events"} Events
         %li
+          %a{href: "#about"} About
+        %li
+          %a{href: "#contact"} Contact 
+        
+      %ul.nav.navbar-nav.navbar-right
+        %li.search-bar
           %a
             = form_tag events_path, :method => :get, :validate => true do
               = text_field_tag :query,nil, placeholder: 'Enter your search here'
               = submit_tag 'Search', :name => nil
-      %ul.nav.navbar-nav.navbar-right
         - if admin_signed_in?
           %li
             = link_to 'Logout', destroy_admin_session_path, :method=>'delete'
@@ -39,3 +38,5 @@
           %li
             = link_to 'Sign up', new_admin_registration_path
     / /.nav-collapse
+    
+  
