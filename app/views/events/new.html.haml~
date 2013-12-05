@@ -9,9 +9,6 @@
       = e.label :organization, 'Organization'
       = e.text_field :organization
     .form-group
-      = e.label :contact, 'Contact Email'
-      = e.text_field :contact
-    .form-group
       = e.label :starts_at, 'Start Date'
       = e.datetime_select :starts_at
     .form-group

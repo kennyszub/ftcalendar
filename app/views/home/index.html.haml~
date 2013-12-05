@@ -1,0 +1,54 @@
+#calendar
+
+:javascript
+  $(document).ready(function() {
+      $.getJSON('/all_events', function(jsonEvents) {
+          var events = [];
+          for (var i = 0; i < jsonEvents.length; i++) {
+              var currEvent = convertToEvent(jsonEvents[i]);
+              events.push(currEvent);
+          }
+          $('#calendar').fullCalendar({
+              header: {
+                  left: 'prev,next today',
+                  center: 'title',
+                  right: 'month,basicWeek,basicDay'
+              },
+              defaultView: 'basicWeek',
+              editable: false,
+              events: events,
+              eventMouseover: function(event, jsEvent, view) {
+                var moveLeft = -20;
+                var moveDown = 20;
+                $('#popup' + event['id']).show();
+                $(this).mousemove(function(e) {
+                  $("#popup" + event['id']).css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+                  });
+              },
+              eventMouseout: function(event, jsEvent, view) {
+                $('#popup' + event['id']).hide();
+              }
+          });
+          var delta = $(calendar).parent().parent().width() - $(calendar).width();
+          $(calendar).parent().css('margin-left',delta/2);
+          $(calendar).parent().width($(calendar).parent().width() + delta/2);
+      });
+  });
+
+
+- @events.each do |event|
+  %div{:id => "popup" + event.id.to_s, :class => "popups"}
+    %h3= event.title
+    %ul
+      %li
+        Starts At:
+        = event.starts_at.strftime("%c")
+      %li
+        Ends At:
+        = event.ends_at.strftime("%c")
+      %li
+        Max Volunteers:
+        = event.max_volunteers
+    %h4 Description:
+
+    %p= event.description

@@ -2055,8 +2055,7 @@ function convertToEvent(event) {
             }
 
             var start = addDays(cloneDate(date), -((date.getDay() - opt('firstDay') + 7) % 7));
-            
-	    //var start = cloneDate(date);
+            //var start = cloneDate(date);
             var end = addDays(cloneDate(start), 14);
 
             var visStart = cloneDate(start);
