@@ -13,11 +13,11 @@
       %tr
         %td= link_to event.title, event_path(event)
         %td= event.organization
-        %td= event.start_at
+        %td= event.starts_at
         %td= event.max_volunteers
         %td= link_to event.title, event_path(event)
       
         
     - if @events.length == 0
       %h4 No events found. Try less specific search terms.
-= link_to 'Back to Calendar', root_path
+= button_to 'Back to Calendar', root_path
