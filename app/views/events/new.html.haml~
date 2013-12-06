@@ -36,13 +36,15 @@
       = e.text_field :city
     .form-group
       = e.label :signup_url, 'Sign Up Link'
+      %p
       = e.text_field :signup_url
     .form-group
       = e.label :max_volunteers, 'Max Volunteers'
+      %p
       = e.number_field :max_volunteers
 
     = submit_tag 'Save Changes'
-    = link_to 'Cancel', root_path
+    = button_to 'Cancel', root_path
 
 :javascript
   $(document).ready(function() {

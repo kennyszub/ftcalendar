@@ -2,15 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.fieldset {
-  width: 30em;
-  float: left;
-  text-align: left;
-  margin-right: 0.5em;
-  display: block
-}
+
 
 label {
   margin-bottom: 0px;
+}
+
+p {
+  margin: 0 0 1px;
 }
 
