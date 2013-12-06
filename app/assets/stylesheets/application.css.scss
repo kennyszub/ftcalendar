@@ -20,11 +20,9 @@
   padding-left:40px;
   padding-right:40px;
 }
-body { 
-
+body {
     padding-bottom:200px;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #60CDFF));
-    
  }
 
 #flash_notice, #flash_alert {
@@ -67,4 +65,8 @@ th.title {
 
 #eventTable {
   background-color: white;
+}
+
+li.search-bar {
+  padding-top: 4px;
 }

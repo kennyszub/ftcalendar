@@ -18,10 +18,9 @@
         
       %ul.nav.navbar-nav.navbar-right
         %li.search-bar
-          %a
-            = form_tag events_path, :method => :get, :validate => true do
-              = text_field_tag :query,nil, placeholder: 'Enter your search here'
-              = submit_tag 'Search', :name => nil
+          = form_tag events_path, :class => "navbar-form", :role => "search", :method => :get, :validate => true do
+            = text_field_tag :query,nil, placeholder: 'Enter your search here'
+            = submit_tag 'Search', :name => nil
         - if admin_signed_in?
           %li
             = link_to 'Logout', destroy_admin_session_path, :method=>'delete'
