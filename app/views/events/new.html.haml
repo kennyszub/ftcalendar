@@ -4,12 +4,15 @@
   .fieldset
     .form-group
       = e.label :title, 'Title'
+      %p
       = e.text_field :title
     .form-group
       = e.label :organization, 'Organization'
+      %p
       = e.text_field :organization
     .form-group
       = e.label :contact, 'Contact Email'
+      %p
       = e.text_field :contact
     .form-group
       = e.label :starts_at, 'Start Date'
@@ -19,7 +22,10 @@
       = e.datetime_select :ends_at
     .form-group
       = e.label :description, 'Description'
+      = '(Mention any specific requirements (i.e., age))' 
+      %p
       = e.text_area :description, :rows => 5
+
     .form-group
       = e.label :street, 'Street'
       = e.text_field :street
@@ -32,9 +38,11 @@
       = e.text_field :zip
     .form-group
       = e.label :signup_url, 'Sign Up Link'
+      %p
       = e.text_field :signup_url
     .form-group
       = e.label :max_volunteers, 'Max Volunteers'
+      %p
       = e.number_field :max_volunteers
 
     = submit_tag 'Save Changes'
