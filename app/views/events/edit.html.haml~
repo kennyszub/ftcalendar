@@ -1,18 +1,15 @@
-%h1 Create New Event
+%h1 Edit Event
 
-= form_for @event, :validate => true do |e|
+= form_for @event, :method => :put, :validate => true do |e|
   .fieldset
     .form-group
       = e.label :title, 'Title'
-      %p
       = e.text_field :title
     .form-group
       = e.label :organization, 'Organization'
-      %p
       = e.text_field :organization
     .form-group
       = e.label :contact, 'Contact Email'
-      %p
       = e.text_field :contact
     .form-group
       = e.label :starts_at, 'Start Date'
@@ -22,27 +19,13 @@
       = e.datetime_select :ends_at
     .form-group
       = e.label :description, 'Description'
-      = '(Mention any specific requirements (i.e., age))' 
-      %p
       = e.text_area :description, :rows => 5
-
     .form-group
       = e.label :signup_url, 'Sign Up Link'
-      %p
       = e.text_field :signup_url
     .form-group
       = e.label :max_volunteers, 'Max Volunteers'
-      %p
       = e.number_field :max_volunteers
 
-    = submit_tag 'Save Changes'
-    = button_to 'Cancel', root_path
-
-:javascript
-  $(document).ready(function() {
-    $("#startDate").datepicker();
-    $('#ui-datepicker-div').removeClass('ui-helper-hidden-accessible'); 
-    $("#endDate").datepicker();
-    $("#time").timepicker();
-    $('#ui-datepicker-div').removeClass('ui-helper-hidden-accessible')
-  
+    = submit_tag 'Update Event Info'
+= button_to 'Cancel', root_path
