@@ -48,7 +48,8 @@ class EventsController < ApplicationController
   end
 
   def all_events
-    @events = Event.near(params[:address], 50, :order => :distance)
+    #@events = Event.near(params[:address], 50, :order => :distance)
+    @events = Event.all
     @events.each do |event|
       event.starts_at = event.starts_at.to_i
       event.ends_at = event.ends_at.to_i
