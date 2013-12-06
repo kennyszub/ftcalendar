@@ -17,6 +17,7 @@
 
 %form{:action => url_with_protocol(@event.signup_url)}
   %input{:type => "submit", :value => "Sign Up to Volunteer"}
+= button_to 'Back to Calendar', root_path
 
 - if admin_signed_in?
   %h3 Admin Actions:
