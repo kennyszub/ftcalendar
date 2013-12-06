@@ -31,12 +31,13 @@
 //}
 
 .test{
-  padding-left:30px
+  padding-left:30px;
 }
 body { 
 
     padding-bottom:200px;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #60CDFF));
+    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #60CDFF 100%);
     
  }
 
