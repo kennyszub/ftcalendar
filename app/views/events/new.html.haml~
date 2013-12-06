@@ -12,7 +12,10 @@
       = e.text_field :organization
     .form-group
       = e.label :contact, 'Contact Email'
+<<<<<<< HEAD
+=======
       %p
+>>>>>>> f07acdd178bb5f6b5b55175bcdd12a29db436269
       = e.text_field :contact
     .form-group
       = e.label :starts_at, 'Start Date'
@@ -26,6 +29,11 @@
       %p
       = e.text_area :description, :rows => 5
 
+    .form-group
+      = e.label :street, 'Street'
+      = e.text_field :street
+      = e.label :city, 'City'
+      = e.text_field :city
     .form-group
       = e.label :signup_url, 'Sign Up Link'
       %p
