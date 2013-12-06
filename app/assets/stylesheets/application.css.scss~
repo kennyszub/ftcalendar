@@ -15,30 +15,24 @@
  */
 //@import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css");
-//
-//.brand {
-   
-//    float: left;
-//    padding-right: 8px;
-//}
-//ul.nav {
-//    list-style: none;
-//    margin: 0 0 2em;u
-//    padding: 0;
-//}
-//ul.nav li {
-//    display: inline;
-//}
 
-.test{
-  padding-left:30px;
+.ftcontent{
+  padding-left:40px;
+  padding-right:40px;
 }
-body { 
-
+body {
     padding-bottom:200px;
+<<<<<<< HEAD
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #60CDFF));
     background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #60CDFF 100%);
+    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #60CDFF 100%);
+    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #60CDFF 100%);
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #60CDFF 100%);
+
     
+=======
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #CEE7FD));
+>>>>>>> 204652801e317e1705bed36082ea7b065b125fcc
  }
 
 #flash_notice, #flash_alert {
@@ -77,4 +71,12 @@ body {
 
 th.title {
   width: 15%;
+}
+
+#eventTable {
+  background-color: white;
+}
+
+li.search-bar {
+  padding-top: 4px;
 }

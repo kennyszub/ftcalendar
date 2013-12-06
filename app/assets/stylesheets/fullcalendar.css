@@ -102,6 +102,7 @@ html .fc,
 .fc-header-title {
     display: inline-block;
     vertical-align: top;
+    color: #5d5d5d;
 }
 
 .fc-header-title h2 {
@@ -417,11 +418,17 @@ table.fc-border-separate {
 .fc-border-separate th.fc-last,
 .fc-border-separate td.fc-last {
     border-right-width: 1px;
+       
+}
+
+.fc-border-separate tr.fc-last th{
+  color: #5d5d5d;
 }
 
 .fc-border-separate tr.fc-last th,
 .fc-border-separate tr.fc-last td {
     border-bottom-width: 1px;
+ 
     
 }
 

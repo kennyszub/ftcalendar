@@ -1,5 +1,5 @@
 
-%table.table.table-striped.table-condensed.table-hover
+%table.table.table-striped.table-condensed.table-hover.table-bordered.table-responsive#eventTable
   %thead
     %tr
       %th.title Title
@@ -7,17 +7,21 @@
       %th Start Date
       %th Max Volunteers
       %th Event Link
+      - if admin_signed_in?
+        %th Edit Event
  
   %tbody
     - @events.each do |event|
       %tr
         %td= link_to event.title, event_path(event)
         %td= event.organization
-        %td= event.start_at
+        %td= event.starts_at
         %td= event.max_volunteers
-        %td= link_to event.title, event_path(event)
+        %td= link_to 'View Event', event_path(event)
+        - if admin_signed_in?
+          %td= link_to 'Edit Event', edit_event_path(event)
       
         
     - if @events.length == 0
       %h4 No events found. Try less specific search terms.
-= link_to 'Back to Calendar', root_path
+= button_to 'Back to Calendar', root_path
