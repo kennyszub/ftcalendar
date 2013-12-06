@@ -53,7 +53,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery_datepicker'
-
+gem 'geocoder'
 gem 'devise'
 
 gem 'sunspot_rails'
