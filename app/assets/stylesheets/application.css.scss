@@ -75,3 +75,8 @@ th.title {
 li.search-bar {
   padding-top: 4px;
 }
+
+// FIXME hacky solution to prevent hover from overlapping border
+.top-bar {
+  padding-bottom: 50px;
+}
