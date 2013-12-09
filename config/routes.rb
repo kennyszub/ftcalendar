@@ -11,6 +11,11 @@ Ftcalendar::Application.routes.draw do
   resources :events
   match 'all_events' => 'events#all_events'
   match '/home/events' => 'home#events'
+  
+  resources :home
+  match '/about' => 'info#about'
+  match '/contact' => 'info#contact'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
