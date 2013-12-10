@@ -3,10 +3,13 @@
 %ul#details
   %li
     Starts At:
-    = @event.starts_at.strftime("%c")
+    = @event.starts_at.strftime("%m/%d/%Y %l:%M %p")
   %li
     Ends At:
-    = @event.ends_at.strftime("%c")
+    = @event.ends_at.strftime("%m/%d/%Y %l:%M %p")
+  %li
+    Address:
+    = @event.address
   %li
     Max Volunteers:
     = @event.max_volunteers
