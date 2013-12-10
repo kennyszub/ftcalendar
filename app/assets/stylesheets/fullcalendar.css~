@@ -4,6 +4,10 @@
  * (c) 2013 Adam Shaw
  */
 
+.fc-event:hover {
+    background-color: #cee7fd;
+    color: #333333;
+}
 
 .ft-icon img{
   height:49px;

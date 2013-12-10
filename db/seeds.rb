@@ -27,7 +27,7 @@ end3 = DateTime.new(2013, 12, 5)
 Event.create!(:title => 'Big Ds party', :organization => 'Donation Party', :contact => 'contact@bigdparty.com', :starts_at => start3, :ends_at => end3, :description => 'Come to this party!', :signup_url => 'etj.com', :max_volunteers => '5', :street => '2520 Benvenue Avenue', :city => 'Berkeley', :state => 'CA', :zip => '94704')
 
 start4 = DateTime.new(2013, 12, 10)
-end4 = DateTime.new(2013, 12, 10, +59)
+end4 = DateTime.new(2013, 12, 11)
 Event.create!(:title => 'Bay Area', :organization => 'BA', :contact => 'contact@bayarea.com', :starts_at => start4, :ends_at => end4, :description => 'Here it is!', :signup_url => 'etj.com', :max_volunteers => '3', :street => '2213 El Camino Real', :city => 'Santa Clara', :state => 'CA', :zip => '95050')
 
 start5 = DateTime.new(2013, 12, 3)
