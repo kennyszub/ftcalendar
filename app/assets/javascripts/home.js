@@ -4,9 +4,11 @@
 
 function convertToEvent(event) {
     var calEvent = {};
+    var currDate = new Date();
+    offset = currDate.getTimezoneOffset() * 60;  //convert from minutes to seconds
     calEvent['title'] = event.title;
-    calEvent['start'] = new Date(event.starts_at * 1000);
-    calEvent['end'] = new Date(event.ends_at * 1000);
+    calEvent['start'] = new Date((event.starts_at + offset) * 1000);
+    calEvent['end'] = new Date((event.ends_at + offset) * 1000);
     calEvent['id'] = event.id;
     calEvent['url'] = '/events/' + event.id;
     return calEvent;
@@ -50,7 +52,7 @@ function convertToEvent(event) {
         //disableResizing: false,
 
         allDayDefault: true,
-        ignoreTimezone: false,
+        ignoreTimezone: true,
 
         // event ajax
         lazyFetching: true,

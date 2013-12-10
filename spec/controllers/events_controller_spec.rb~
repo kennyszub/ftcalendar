@@ -15,9 +15,14 @@ describe EventsController do
     login_admin   
     
     it 'should show the form to edit an event' do
-      event = double('Event', :title => 'test')
-      Event.should_receive(:find).with('5').and_return(event)
-      get :edit, {:id => '5'}
+      @event = mock_model(Event, :id => 5, :starts_at => DateTime.new(2013, 12, 10))
+      @event.stub(:save).and_return(true)
+      newDate = DateTime.new(2013, 12, 10)
+      @event.stub(:starts_at).and_return(newDate)
+      #@event.stub(:starts_at).with(:strftime).and_return(newDate)
+      newDate.stub(:strftime)
+      Event.should_receive(:find).with('5').and_return(@event)
+      get :edit, :id => 5
       response.should render_template('edit')
     end
   end
@@ -26,8 +31,8 @@ describe EventsController do
     login_admin
 
     it 'should display the event and its appropriate info' do
-      event = double('Event')
-      Event.should_receive(:find).with('5').and_return(event)
+      @event = mock_model(Event)
+      Event.should_receive(:find).with('5').and_return(@event)
       get :show, {:id => '5'}
       response.should render_template('show')
     end
@@ -106,10 +111,12 @@ describe EventsController do
       fake_events = [double('Event', :id => '5', :title => 'test'), double('Event', :id => '6', :title => 'hello')]
       fake_results = [double('Event', :id => '5', :title => 'test')]
       #fake_results = [double('Event'), double('Event')]
-      Event.should_receive(:all).and_return(fake_events)
+      Event.should_receive(:find).and_return(fake_events)
       Event.should_receive(:search).and_return(fake_results)
+      fake_results.stub(:results).and_return(fake_results)
+      fake_results.stub(:sort!)
       get :index, {:query => 'test'}
-      response.should redirect_to(@events)
+      response.should be_success
     end
   end
 
