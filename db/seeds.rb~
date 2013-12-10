@@ -16,4 +16,4 @@
 
 startTime = DateTime.new(2013, 12, 3)
 endTime = DateTime.new(2013, 12, 5)
-Event.create!(:title => 'Birthday', :organization => 'Bears', :contact => 'je@etj.com', :starts_at => startTime, :ends_at => endTime, :description => 'etug', :signup_url => 'etj.com', :max_volunteers => '3')
+Event.create!(:title => 'Birthday', :organization => 'Bears', :contact => 'je@etj.com', :starts_at => startTime, :ends_at => endTime, :description => 'etug', :signup_url => 'etj.com', :max_volunteers => '3', :address => "23224r2 tgv")
