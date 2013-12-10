@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20131206013758) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "events", :force => true do |t|
-    t.string   "title"
+    t.text   "title"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.text     "description"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20131206013758) do
     t.integer  "max_volunteers"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-    t.string   "organization"
-    t.string   "contact"
+    t.text   "organization"
+    t.text   "contact"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "street"
