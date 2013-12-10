@@ -9,6 +9,8 @@ class EventsController < ApplicationController
   def edit
     id = params[:id]
     @event = Event.find(id)
+    @event.starts_at= @event.starts_at.strftime("%m/%d/%Y %l:%M %p")
+    @event.ends_at= @event.ends_at.strftime("%m/%d/%Y %l:%M %p")
   end
 
   def show
@@ -71,7 +73,7 @@ class EventsController < ApplicationController
     end
     if params[:query]
       @search = Event.search do
-        keywords params[:query]
+        fulltext params[:query]
         #fields(:description, :title)
       end
       if admin_signed_in?
