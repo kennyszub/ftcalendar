@@ -42,6 +42,11 @@
     
 }
 
+.fc-event:hover {
+    background-color: #cee7fd;
+    color: 
+}
+
 .fc table {
     border-collapse: collapse;
     border-spacing: 0;
