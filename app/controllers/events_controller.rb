@@ -17,13 +17,40 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create!(params[:event])
-    flash[:notice] = "#{@event.title} was successfully created."
-    redirect_to @event
+    event_params = params[:event]
+    begin
+      event_params['starts_at'] = DateTime.strptime(event_params['starts_at'], "%m/%d/%Y %l:%M %p")
+      event_params['ends_at'] = DateTime.strptime(event_params['ends_at'], "%m/%d/%Y %l:%M %p")
+    rescue ArgumentError
+      flash[:alert] = "Please enter valid dates."
+      @event = Event.new(event_params)
+      render 'new'
+      return
+    end
+
+    @event = Event.new(event_params)
+    if @event.save
+      flash[:notice] = "#{@event.title} was successfully created."
+      redirect_to @event
+    else
+      flash[:alert] = "Please correct these errors: " + @event.errors.full_messages.join(". ")
+      render 'new'
+    end
   end
 
   def update
     @event = Event.find params[:id]
+
+    event_params = params[:event]
+    begin
+      event_params['starts_at'] = DateTime.strptime(event_params['starts_at'], "%m/%d/%Y %l:%M %p")
+      event_params['ends_at'] = DateTime.strptime(event_params['ends_at'], "%m/%d/%Y %l:%M %p")
+    rescue ArgumentError
+      flash[:alert] = "Please enter valid dates."
+      render 'edit'
+      return
+    end
+
     @event.update_attributes!(params[:event])
     flash[:notice] = "#{@event.title} was successfully updated."
     redirect_to @event

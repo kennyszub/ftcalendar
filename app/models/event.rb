@@ -15,6 +15,10 @@ class Event < ActiveRecord::Base
   end
 
 
-  validates_presence_of :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact
+  validates_presence_of :description, :ends_at,
+                        :max_volunteers, :signup_url,
+                        :starts_at, :title, :organization,
+                        :contact, :street, :city, :state, :zip
+
   validates_date :starts_at, :on_or_before => lambda { :ends_at }
 end
