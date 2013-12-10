@@ -9,6 +9,8 @@ class EventsController < ApplicationController
   def edit
     id = params[:id]
     @event = Event.find(id)
+    @event.starts_at= @event.starts_at.strftime("%m/%d/%Y %l:%M %p")
+    @event.ends_at= @event.ends_at.strftime("%m/%d/%Y %l:%M %p")
   end
 
   def show
