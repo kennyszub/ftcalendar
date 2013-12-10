@@ -568,3 +568,39 @@ Dec 9, 2013 9:31:08 PM org.apache.solr.update.DirectUpdateHandler2 commit
 INFO: end_commit_flush
 Dec 9, 2013 9:31:08 PM org.apache.solr.update.processor.LogUpdateProcessor finish
 INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 264
+Dec 9, 2013 10:45:17 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Event 1 (1454016212129284096)]} 0 4
+Dec 9, 2013 10:45:17 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Dec 9, 2013 10:45:17 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/sunspot_solr-2.1.0/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@6279d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_e,generation=14,filenames=[segments_e, _f_Lucene41_0.pos, _f.nvm, _c_Lucene41_0.doc, _c.fdx, _f.si, _f.fdt, _f.nvd, _c_Lucene41_0.pos, _c.fdt, _f_Lucene41_0.tip, _f.fdx, _f_Lucene41_0.doc, _c.si, _f.fnm, _c.nvm, _c_Lucene41_0.tim, _f_Lucene41_0.tim, _c_Lucene41_0.tip, _c.fnm, _c.nvd]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/sunspot_solr-2.1.0/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@6279d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_f,generation=15,filenames=[_g.si, _f_Lucene41_0.pos, _g.nvm, _f.nvm, _g_Lucene41_0.pos, _g.nvd, _c.fdx, _c_Lucene41_0.pos, _f.nvd, _f.si, _f_Lucene41_0.tip, _c.fdt, _g_Lucene41_0.tip, _c.si, _f_Lucene41_0.doc, _g.fnm, _c.nvm, _g_Lucene41_0.doc, _g_Lucene41_0.tim, _f_Lucene41_0.tim, _c.nvd, _g.fdt, segments_f, _g.fdx, _c_Lucene41_0.doc, _f.fdt, _f.fdx, _f.fnm, _c_Lucene41_0.tim, _c_Lucene41_0.tip, _c.fnm]
+Dec 9, 2013 10:45:17 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 15[_g.si, _f_Lucene41_0.pos, _g.nvm, _f.nvm, _g_Lucene41_0.pos, _g.nvd, _c.fdx, _c_Lucene41_0.pos, _f.nvd, _f.si, _f_Lucene41_0.tip, _c.fdt, _g_Lucene41_0.tip, _c.si, _f_Lucene41_0.doc, _g.fnm, _c.nvm, _g_Lucene41_0.doc, _g_Lucene41_0.tim, _f_Lucene41_0.tim, _c.nvd, _g.fdt, segments_f, _g.fdx, _c_Lucene41_0.doc, _f.fdt, _f.fdx, _f.fnm, _c_Lucene41_0.tim, _c_Lucene41_0.tip, _c.fnm]
+Dec 9, 2013 10:45:17 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@1824d2c main
+Dec 9, 2013 10:45:17 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@1824d2c main{StandardDirectoryReader(segments_f:39:nrt _c(4.2):C12 _f(4.2):C1 _g(4.2):C1)}
+Dec 9, 2013 10:45:17 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Dec 9, 2013 10:45:17 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 48
+Dec 9, 2013 10:45:50 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Event 2 (1454016247297474560)]} 0 3
+Dec 9, 2013 10:45:50 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Dec 9, 2013 10:45:50 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/sunspot_solr-2.1.0/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@6279d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_f,generation=15,filenames=[_g.si, _f_Lucene41_0.pos, _g.nvm, _f.nvm, _g_Lucene41_0.pos, _g.nvd, _c.fdx, _c_Lucene41_0.pos, _f.nvd, _f.si, _f_Lucene41_0.tip, _c.fdt, _g_Lucene41_0.tip, _c.si, _f_Lucene41_0.doc, _g.fnm, _c.nvm, _g_Lucene41_0.doc, _g_Lucene41_0.tim, _f_Lucene41_0.tim, _c.nvd, _g.fdt, segments_f, _g.fdx, _c_Lucene41_0.doc, _f.fdt, _f.fdx, _f.fnm, _c_Lucene41_0.tim, _c_Lucene41_0.tip, _c.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/sunspot_solr-2.1.0/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@6279d; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_g,generation=16,filenames=[_c_1.del, _g.si, _g.nvm, _f_Lucene41_0.pos, _f.nvm, _h.nvd, _g_Lucene41_0.pos, _g.nvd, _c.fdx, _c_Lucene41_0.pos, _f.nvd, _f.si, _f_Lucene41_0.tip, _c.fdt, _g_Lucene41_0.tip, _c.si, _f_Lucene41_0.doc, _g.fnm, _h.fdt, _c.nvm, _g_Lucene41_0.doc, _h.si, _h.fdx, _g_Lucene41_0.tim, _f_Lucene41_0.tim, _c.nvd, _h_Lucene41_0.tip, _g.fdt, _h.fnm, _h_Lucene41_0.tim, _g.fdx, _c_Lucene41_0.doc, segments_g, _f.fdt, _f.fdx, _f.fnm, _c_Lucene41_0.tim, _h_Lucene41_0.doc, _c_Lucene41_0.tip, _c.fnm, _h.nvm, _h_Lucene41_0.pos]
+Dec 9, 2013 10:45:50 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 16[_c_1.del, _g.si, _g.nvm, _f_Lucene41_0.pos, _f.nvm, _h.nvd, _g_Lucene41_0.pos, _g.nvd, _c.fdx, _c_Lucene41_0.pos, _f.nvd, _f.si, _f_Lucene41_0.tip, _c.fdt, _g_Lucene41_0.tip, _c.si, _f_Lucene41_0.doc, _g.fnm, _h.fdt, _c.nvm, _g_Lucene41_0.doc, _h.si, _h.fdx, _g_Lucene41_0.tim, _f_Lucene41_0.tim, _c.nvd, _h_Lucene41_0.tip, _g.fdt, _h.fnm, _h_Lucene41_0.tim, _g.fdx, _c_Lucene41_0.doc, segments_g, _f.fdt, _f.fdx, _f.fnm, _c_Lucene41_0.tim, _h_Lucene41_0.doc, _c_Lucene41_0.tip, _c.fnm, _h.nvm, _h_Lucene41_0.pos]
+Dec 9, 2013 10:45:50 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@1a6eeab main
+Dec 9, 2013 10:45:50 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@1a6eeab main{StandardDirectoryReader(segments_g:43:nrt _c(4.2):C12/1 _f(4.2):C1 _g(4.2):C1 _h(4.2):C1)}
+Dec 9, 2013 10:45:50 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Dec 9, 2013 10:45:50 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 71
