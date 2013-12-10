@@ -73,7 +73,7 @@ body {
   position: absolute;
   width: 280px;
   padding: 10px;
-  background: #eeeeee;
+  background: #0088FF;
   color: #000000;
   border: 1px solid #1a1a1a;
   font-size: 90%;
@@ -206,11 +206,14 @@ p {
     
 }
 
+<<<<<<< HEAD
 .fc-event:hover {
     background-color: #cee7fd;
     color: #333333;
 }
 
+=======
+>>>>>>> 8ec5b18758bc81daa2a5850ba1e832dde1e22e7d
 .fc table {
     border-collapse: collapse;
     border-spacing: 0;

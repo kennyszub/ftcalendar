@@ -51,17 +51,21 @@
 
 :javascript
   $(document).ready(function() {
+
+
     $('#event_starts_at').datetimepicker(
     {
       addSliderAccess: true,
       sliderAccessArgs: { touchonly: false },
-      timeFormat: "h:mm TT"
+      timeFormat: "h:mm TT",
+      defaultValue: "select a date/time"
      });
 
     $('#event_ends_at').datetimepicker(
     {
       addSliderAccess: true,
       sliderAccessArgs: { touchonly: false },
-      timeFormat: "h:mm TT"
+      timeFormat: "h:mm TT",
+      defaultValue: "select a date/time"
      });
   });
