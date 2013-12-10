@@ -36,12 +36,32 @@ describe EventsController do
   describe 'create an event' do
     login_admin
 
-    it 'should create an event successfully' do
+    before(:each) do 
+      @event = FactoryGirl.build(:event)
+    end
+
+    it 'should create an event successfully with the correct params' do
+      @event = mock_model(Event) 
+      @event.stub(:save).and_return(true)
+      Event.should_receive(:new).and_return(@event)
+      post :create, event: {starts_at: '12/10/2013 12:00 AM', ends_at: '12/12/2013 12:00 AM'}
+      response.should redirect_to @event
+    end
+
+    it 'should render new on invalid starts_at params' do
       @event = mock_model(Event)
       @event.stub(:save).and_return(true)
-      Event.should_receive(:create!).and_return(@event)
-      post :create, :event => @event
-      response.should redirect_to @event
+      Event.should_receive(:new).and_return(@event)
+      post :create, event: {starts_at: DateTime.new(2013, 12, 10), ends_at: DateTime.new(2013, 12, 12)}
+      response.should render_template('new')
+    end
+
+    it 'should render new on invalid event params' do
+      @event = mock_model(Event)
+      @event.stub(:save).and_return(false)
+      Event.should_receive(:new).and_return(@event)
+      post :create, event: {starts_at: '12/10/2013 12:00 AM', ends_at: '12/12/2013 12:00 AM'}
+      response.should render_template('new')
     end
   end
 
@@ -54,8 +74,16 @@ describe EventsController do
       @event.stub(:save).and_return(true)
       Event.should_receive(:find).with('5').and_return(@event)
       @event.should_receive(:update_attributes!)
-      put :update, :id => '5', :event => @event
+      put :update, :id => '5', event: {starts_at: '12/10/2013 12:00 AM', ends_at: '12/12/2013 12:00 AM'}
       response.should redirect_to @event
+    end
+
+     it 'should fail update on invalid params' do
+      @event = mock_model(Event)
+      @event.stub(:save).and_return(true)
+      Event.should_receive(:find).with('5').and_return(@event)
+      put :update, :id => '5', event: {starts_at: DateTime.new(2013, 12, 10), ends_at: DateTime.new(2013, 12, 12)}
+      response.should render_template('edit')
     end
   end
 
@@ -75,13 +103,13 @@ describe EventsController do
     login_admin
 
     it 'should return the events given by a search query' do
-      fake_events = [double('Event', :id => '5', :title => 'test'), double('Event', :id => '6', :title => 'test2')]
+      fake_events = [double('Event', :id => '5', :title => 'test'), double('Event', :id => '6', :title => 'hello')]
       fake_results = [double('Event', :id => '5', :title => 'test')]
       #fake_results = [double('Event'), double('Event')]
       Event.should_receive(:all).and_return(fake_events)
       Event.should_receive(:search).and_return(fake_results)
-      get :index
-      response.should render_template('index')
+      get :index, {:query => 'test'}
+      response.should redirect_to(@events)
     end
   end
 
