@@ -37,23 +37,25 @@ class EventsController < ApplicationController
   end
 
   def index
-    #@events = Event.near(params[:address], 50, :order => :distance)
-    @events = Event.all
+    @events = Event.near("136.152.39.198", 30, :order => :starts_at)
+    #@events = Event.all
     if params[:query]
       @search = Event.search do
         keywords params[:query]
         #fields(:description, :title)
       end
-      @events = @search.results
+      @events = @search.results & @events
+      @events.sort! {|a,b| a.starts_at <=> b.starts_at}
+      
     end
   end
 
   def all_events
-    #puts "ip address " + request.remote_ip
-    #puts "ip address " + request.ip
-    @events = Event.near(request.remote_ip, 50, :order => :distance)
-    #@events = Event.all
-    #@events = Event.nearbys(50)
+    if admin_signed_in?
+      @events = Event.all
+    else
+      @events = Event.near(request.remote_ip, 30)
+    end
     @events.each do |event|
       event.starts_at = event.starts_at.to_i
       event.ends_at = event.ends_at.to_i
