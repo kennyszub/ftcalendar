@@ -16,15 +16,25 @@
       = e.text_field :contact
     .form-group
       = e.label :starts_at, 'Start Date'
-      = e.datetime_select :starts_at
+      = e.text_field :starts_at
     .form-group
       = e.label :ends_at, 'End Date'
-      = e.datetime_select :ends_at
+      = e.text_field :ends_at
     .form-group
       = e.label :description, 'Description'
       = '(Mention any specific requirements (i.e., age))' 
       %p
       = e.text_area :description, :rows => 5
+    .form-group
+      = e.label :street, 'Street'
+      = e.text_field :street
+      = e.label :city, 'City'
+      = e.text_field :city
+    .form-group
+      = e.label :state, 'State'
+      = e.text_field :state
+      = e.label :zip, 'Zip Code'
+      = e.text_field :zip
     .form-group
       = e.label :signup_url, 'Sign Up Link'
       %p
@@ -36,3 +46,21 @@
 
     = submit_tag 'Update Event Info'
 = button_to 'Cancel', root_path
+
+
+:javascript
+  $(document).ready(function() {
+    $('#event_starts_at').datetimepicker(
+    {
+      addSliderAccess: true,
+      sliderAccessArgs: { touchonly: false },
+      timeFormat: "h:mm TT"
+     });
+
+    $('#event_ends_at').datetimepicker(
+    {
+      addSliderAccess: true,
+      sliderAccessArgs: { touchonly: false },
+      timeFormat: "h:mm TT"
+     });
+  });
