@@ -9,7 +9,12 @@ class Event < ActiveRecord::Base
     text :description
     text :title
     text :organization
-    integer :max_volunteers
+    text :signup_url
+    text :contact
+    text :city
+    text :state
+    text :street
+     :max_volunteers
   end
 
   #def address
