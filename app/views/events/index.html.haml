@@ -5,6 +5,7 @@
       %th.title Title
       %th Organization Name
       %th Start Date
+      %th Address
       %th Max Volunteers
       %th Event Link
       - if admin_signed_in?
@@ -15,7 +16,8 @@
       %tr
         %td= link_to event.title, event_path(event)
         %td= event.organization
-        %td= event.starts_at
+        %td= event.starts_at.strftime("%m/%d/%Y %l:%M %p")
+        %td= event.address
         %td= event.max_volunteers
         %td= link_to 'View Event', event_path(event)
         - if admin_signed_in?
