@@ -4,6 +4,10 @@
  * (c) 2013 Adam Shaw
  */
 
+.fc-event:hover {
+    background-color: #cee7fd;
+    color: #333333;
+}
 
 .ft-icon img{
   height:49px;
@@ -19,7 +23,7 @@
 
 }
 .container{
-
+  padding-bottom:10px;
   width:100%;
   padding-left:0px;
   padding-right:0px;
@@ -36,6 +40,11 @@
     direction: ltr;
     text-align: left;
     
+}
+
+.fc-event:hover {
+    background-color: #cee7fd;
+    color: 
 }
 
 .fc table {
@@ -102,6 +111,7 @@ html .fc,
 .fc-header-title {
     display: inline-block;
     vertical-align: top;
+    color: #5d5d5d;
 }
 
 .fc-header-title h2 {
@@ -417,11 +427,17 @@ table.fc-border-separate {
 .fc-border-separate th.fc-last,
 .fc-border-separate td.fc-last {
     border-right-width: 1px;
+       
+}
+
+.fc-border-separate tr.fc-last th{
+  color: #5d5d5d;
 }
 
 .fc-border-separate tr.fc-last th,
 .fc-border-separate tr.fc-last td {
     border-bottom-width: 1px;
+ 
     
 }
 
