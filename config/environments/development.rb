@@ -33,6 +33,7 @@
   config.assets.compress = false
 
   config.assets.manifest = Rails.root.join("public/assets")
+  # added to fix precompile issue in dev..remove if problems
   config.serve_static_assets = false
 
   # Expands the lines which load the assets

@@ -65,10 +65,23 @@ body {
   position: absolute;
   width: 280px;
   padding: 10px;
-  background: #93C3ED;
+  background: #CCEDD8;
   color: #000000;
   border: 1px solid #1a1a1a;
   font-size: 90%;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.noMarginPadding {
+  padding: 0px;
+  margin: 0px;
+}
+
+.popupList {
+  list-style: none;
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
 th.title {

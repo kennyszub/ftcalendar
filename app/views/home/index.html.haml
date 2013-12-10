@@ -39,19 +39,19 @@
 
 - @events.each do |event|
   %div{:id => "popup" + event.id.to_s, :class => "popups", :style => "z-index: 10;"}
-    %h3= event.title
-    %ul
+    %h3.noMarginPadding= event.title
+    %ul.popupList
       %li
-        Starts At:
+        %b Starts At:
         = event.starts_at.strftime("%m/%d/%Y %l:%M %p")
       %li
-        Ends At:
+        %b Ends At:
         = event.ends_at.strftime("%m/%d/%Y %l:%M %p")
       %li
-        Address:
+        %b Address:
         = event.address
       %li
-        Max Volunteers:
+        %b Max Volunteers:
         = event.max_volunteers
     %h4 Description:
 
