@@ -1,18 +1,39 @@
 class Event < ActiveRecord::Base
+<<<<<<< HEAD
            attr_accessible :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact, :street, :city, :state, :zip, :latitude, :longitude
   geocoded_by :address
   after_validation :geocode
+=======
+
+
+  attr_accessible :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact, :street, :city, :state, :zip
+  #geocoded_by :address
+  #after_validation :geocode
+>>>>>>> 37c2c564b5942f374b552ed8dd464f61d0a0730b
 
   searchable do
     text :description
     text :title
-    text :address
-    integer :max_volunteers
+    text :organization
+    text :signup_url
+    text :contact
+    text :city
+    text :state
+    text :street
+     :max_volunteers
   end
 
+<<<<<<< HEAD
 def address
   [street, city, state, zip].compact.join(', ')
 end
+=======
+  #def address
+  #  [:street, :city, :state, :zip].compact.join(', ')
+  #end
+
+
+>>>>>>> 37c2c564b5942f374b552ed8dd464f61d0a0730b
   validates_presence_of :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact
   validates_date :starts_at, :on_or_before => lambda { :ends_at }
 end

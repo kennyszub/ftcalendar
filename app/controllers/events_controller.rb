@@ -37,7 +37,6 @@ class EventsController < ApplicationController
   end
 
   def index
-     
     #@events = Event.near(params[:address], 50, :order => :distance)
     @events = Event.all
     if params[:query]

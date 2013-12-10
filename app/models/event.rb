@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+
            attr_accessible :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact, :street, :city, :state, :zip, :latitude, :longitude
   geocoded_by :address
   after_validation :geocode
@@ -6,8 +7,13 @@ class Event < ActiveRecord::Base
   searchable do
     text :description
     text :title
-    text :address
-    integer :max_volunteers
+    text :organization
+    text :signup_url
+    text :contact
+    text :city
+    text :state
+    text :street
+     :max_volunteers
   end
 
 def address
