@@ -1,17 +1,17 @@
 %h2 #{@event.title}
 
-%ul#details
+%ul.customList#details
   %li
-    Starts At:
+    %b Starts At:
     = @event.starts_at.strftime("%m/%d/%Y %l:%M %p")
   %li
-    Ends At:
+    %b Ends At:
     = @event.ends_at.strftime("%m/%d/%Y %l:%M %p")
   %li
-    Address:
+    %b Address:
     = @event.address
   %li
-    Max Volunteers:
+    %b Max Volunteers:
     = @event.max_volunteers
 
 %h3 Description:

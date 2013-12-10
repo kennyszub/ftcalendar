@@ -40,7 +40,7 @@
 - @events.each do |event|
   %div{:id => "popup" + event.id.to_s, :class => "popups", :style => "z-index: 10;"}
     %h3.noMarginPadding= event.title
-    %ul.popupList
+    %ul.customList
       %li
         %b Starts At:
         = event.starts_at.strftime("%m/%d/%Y %l:%M %p")
