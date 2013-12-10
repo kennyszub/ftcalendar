@@ -73,7 +73,7 @@ class EventsController < ApplicationController
     end
     if params[:query]
       @search = Event.search do
-        keywords params[:query]
+        fulltext params[:query]
         #fields(:description, :title)
       end
       if admin_signed_in?
