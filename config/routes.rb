@@ -1,7 +1,9 @@
 Ftcalendar::Application.routes.draw do
   #get "home/index"
 
-  devise_for :admins
+  devise_for :admins, path_names: {
+      sign_up: 'super-secret-signup'
+  }
 
   authenticated :admin do
     root :to => 'home#index'

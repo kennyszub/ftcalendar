@@ -101,6 +101,14 @@ li.search-bar {
   padding-bottom: 50px;
 }
 
+
+#infoText {
+  text-align: left;
+  margin-left: 125px;
+  margin-right: 125px;
+}
+
+
 /* css for timepicker */
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
 .ui-timepicker-div dl { text-align: left; }
@@ -113,3 +121,5 @@ li.search-bar {
 .ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
 .ui-timepicker-rtl dl dt{ float: right; clear: right; }
 .ui-timepicker-rtl dl dd { margin: 0 45% 10px 10px; }
+
+

@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-           attr_accessible :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact, :street, :city, :state, :zip, :latitude, :longitude
+  attr_accessible :description, :ends_at, :max_volunteers, :signup_url, :starts_at, :title, :organization, :contact, :street, :city, :state, :zip, :latitude, :longitude
   geocoded_by :address
   after_validation :geocode
 
